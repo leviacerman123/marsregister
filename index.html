@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="login-form" id="loginForm">
+            <div class="mars-logo">
+                <img src="./image 2 (1).png" alt="Mars Logo" class="logo">
+            </div>
+            <h2>Spacega xush kelibsiz</h2>
+            <div class="tabs">
+                <button class="tab active">O'quvchiman</button>
+                <button class="tab">Ota-onaman</button>
+            </div>
+            <input type="text" id="loginInput" placeholder="Modme Id or Phone number">
+            <div id="loginError" class="error-message"></div>
+            <input type="password" id="passwordInput" placeholder="Password">
+            <div class="qr-link">QR code orqali kirish</div>
+            <button onclick="handleLogin()">Подтвердить</button>
+        </div>
+
+        
+        <div class="profile-section" id="profileCard" style="display: none;">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <img src="./image 2 (1).png" alt="Mars Logo" class="header-logo">
+                </div>
+                <div class="header-center">
+                    <button class="nav-button active">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z'/%3E%3C/svg%3E" alt="Dashboard">
+                        Dashboard
+                    </button>
+                    <button class="nav-button">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z'/%3E%3C/svg%3E" alt="Learning">
+                        Learning
+                    </button>
+                    <button class="nav-button">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z'/%3E%3C/svg%3E" alt="Shop">
+                        Shop
+                    </button>
+                </div>
+                <div class="header-right">
+                    <button id="themeToggle" class="theme-toggle">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z'/%3E%3C/svg%3E" alt="Theme" class="theme-icon light-icon">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z'/%3E%3C/svg%3E" alt="Theme" class="theme-icon dark-icon">
+                    </button>
+                    <img src="./Profile Picture.png" alt="Profile" class="profile-icon">
+                </div>
+            </header>
+
+            
+            <div class="card">
+                <div class="mars-space-logo">Mars Space</div>
+                <div class="profile-frame">
+                    <img src="./Profile Picture.png" alt="Student Avatar" class="avatar">
+                </div>
+                <div class="rank">Darajalar</div>
+                <div class="stars" id="studentStars"></div>
+                <h2 class="name" id="studentName"></h2>
+                <p class="id" id="teacherInfo"></p>
+                <div class="stats">
+                    <div class="stat">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='gold'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z'/%3E%3C/svg%3E" alt="coin" class="coin-icon">
+                        <span id="studentCoin"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
